@@ -1,0 +1,16 @@
+services:
+  app:
+    build: ./app
+    container_name: todo-app
+    ports:
+      - "8080:8000"
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=1
+    volumes:
+      - dbdata:/var/www/html/database
+    restart: unless-stopped
+    command: sh -lc "[ -f database/database.sqlite ] || touch database/database.sqlite; php artisan migrate --force; php -S 0.0.0.0:8000 -t public"
+
+volumes:
+  dbdata:
