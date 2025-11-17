@@ -109,7 +109,7 @@ Run the test suite from the `app/` directory:
 composer test
 ```
 - Uses in-memory SQLite (no external DB required).
-- No need to run Vite or build assets; tests stub the Vite hot file automatically.
+- No need to run Vite or build assets; tests stub the Vite hot file automatically
 
 ## Product Requirements
 See `PRD.md` for goals, scope, data model, and milestones.
